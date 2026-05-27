@@ -34,23 +34,15 @@ public class GrapheListe implements Graphe{
         if (poids < 0) {
             return;
         }
-
-        // 1. Si le noeud source n'existe pas dans le tableau, on l'ajoute
         if (this.noeuds.indexOf(noeudSrc) < 0) {
             this.noeuds.add(noeudSrc);
-            this.adjacences.add(new Arcs()); // On cree sa liste d'adjacence vide synchrone
+            this.adjacences.add(new Arcs());
         }
-
-        // 2. Si le noeud destination n'existe pas dans le tableau, on l'ajoute aussi
         if (this.noeuds.indexOf(noeudDest) < 0) {
             this.noeuds.add(noeudDest);
-            this.adjacences.add(new Arcs()); // On cree sa liste d'adjacence vide synchrone
+            this.adjacences.add(new Arcs());
         }
-
-        // 3. Maintenant qu'on est SUR que les noeuds existent, on recupere le bon indice de la source
         int indiceSrc = this.noeuds.indexOf(noeudSrc);
-
-        // 4. On cree l'arc et on l'ajoute a la liste d'adjacence du noeud source
         Arc a = new Arc(noeudDest, poids);
         this.adjacences.get(indiceSrc).ajouterArc(a);
     }
