@@ -38,4 +38,12 @@ public class GrapheListe implements Graphe{
             this.adjacences.get(indiceSrc).ajouterArc(a);
         }
     }
+
+    @Override
+    public String toString() {
+        return "GrapheListe{" +
+                "noeuds=" + noeuds +
+                ", adjacences=" + adjacences +
+                '}';
+    }
 }
