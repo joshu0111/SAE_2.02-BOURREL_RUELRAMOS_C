@@ -12,7 +12,7 @@ public class Arcs {
     }
 
     /**
-     * Methode qui permet d'ajojuter un arc la liste des arcs
+     * Methode qui permet d'ajouter un arc la liste des arcs
      * @param a Objet de type Arc
      */
     public void ajouterArc(Arc a){
