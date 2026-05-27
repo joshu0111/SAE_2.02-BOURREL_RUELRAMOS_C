@@ -30,18 +30,29 @@ public class GrapheListe implements Graphe{
      * @param poids Double qui corredpond au poids de l'arc
      */
     public void ajouterArc(String noeudSrc, String noeudDest, double poids){
-        // Indices des noeuds
-        int indiceSrc = this.noeuds.indexOf(noeudSrc);
-        int indiceDest = this.noeuds.indexOf(noeudDest);
-
-        // Verifications des parametres
-        if ((indiceSrc >= 0) && (indiceDest >= 0) && (poids>=0)){
-            // Creation d'un nouvel arc
-            Arc a = new Arc(noeudDest, poids);
-
-            // Ajout aux adjacences
-            this.adjacences.get(indiceSrc).ajouterArc(a);
+        // Verification du poids
+        if (poids < 0) {
+            return;
         }
+
+        // 1. Si le noeud source n'existe pas dans le tableau, on l'ajoute
+        if (this.noeuds.indexOf(noeudSrc) < 0) {
+            this.noeuds.add(noeudSrc);
+            this.adjacences.add(new Arcs()); // On cree sa liste d'adjacence vide synchrone
+        }
+
+        // 2. Si le noeud destination n'existe pas dans le tableau, on l'ajoute aussi
+        if (this.noeuds.indexOf(noeudDest) < 0) {
+            this.noeuds.add(noeudDest);
+            this.adjacences.add(new Arcs()); // On cree sa liste d'adjacence vide synchrone
+        }
+
+        // 3. Maintenant qu'on est SUR que les noeuds existent, on recupere le bon indice de la source
+        int indiceSrc = this.noeuds.indexOf(noeudSrc);
+
+        // 4. On cree l'arc et on l'ajoute a la liste d'adjacence du noeud source
+        Arc a = new Arc(noeudDest, poids);
+        this.adjacences.get(indiceSrc).ajouterArc(a);
     }
 
     @Override
