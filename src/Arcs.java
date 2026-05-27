@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class Arcs {
     /** Attributs */
-    ArrayList<Arc> listeArc;
+    ArrayList<Arc> listeArcs;
 
     /**
      * Constructeur vide
      */
     public Arcs(){
-        this.listeArc = new ArrayList<Arc>();
+        this.listeArcs = new ArrayList<Arc>();
     }
 
     /**
@@ -16,7 +16,7 @@ public class Arcs {
      * @param a Objet de type Arc
      */
     public void ajouterArc(Arc a){
-        this.listeArc.add(a);
+        this.listeArcs.add(a);
     }
 
     /**
@@ -24,6 +24,6 @@ public class Arcs {
      * @return ArrayList<Arc>
      */
     public ArrayList<Arc> getListeArc() {
-        return listeArc;
+        return listeArcs;
     }
 }
