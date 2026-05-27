@@ -30,7 +30,7 @@ public class GrapheListe implements Graphe{
         int indiceDest = this.noeuds.indexOf(noeudDest);
 
         // Verifications des parametres
-        if ((indiceSrc > 0) && (indiceDest > 0) && (poids>0)){
+        if ((indiceSrc >= 0) && (indiceDest >= 0) && (poids>=0)){
             // Creation d'un nouvel arc
             Arc a = new Arc(noeudDest, poids);
 
