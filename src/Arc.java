@@ -12,4 +12,9 @@ public class Arc {
         this.nCible = n;
         this.poids = p;
     }
+
+    @Override
+    public String toString() {
+        return nCible + "(" + poids + ")";
+    }
 }

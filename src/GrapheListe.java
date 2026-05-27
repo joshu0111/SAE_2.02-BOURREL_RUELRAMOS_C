@@ -57,9 +57,15 @@ public class GrapheListe implements Graphe{
 
     @Override
     public String toString() {
-        return "GrapheListe{" +
-                "noeuds=" + noeuds +
-                ", adjacences=" + adjacences +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < this.noeuds.size(); i++) {
+            String noeudSrc = this.noeuds.get(i);
+            Arcs adj = this.adjacences.get(i);
+            sb.append(noeudSrc);
+            sb.append(" -> ");
+            sb.append(adj.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

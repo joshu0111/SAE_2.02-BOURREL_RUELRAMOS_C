@@ -26,4 +26,20 @@ public class Arcs {
     public ArrayList<Arc> getListeArc() {
         return listeArcs;
     }
+
+    /**
+     * Methode toString()
+     * @return
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < this.listeArcs.size(); i++) {
+            sb.append(this.listeArcs.get(i).toString());
+            if (i < this.listeArcs.size() - 1) {
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
+    }
 }
