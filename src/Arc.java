@@ -1,7 +1,7 @@
 public class Arc {
     /** Attributrs */
-    String nCible;
-    double poids;
+    private String nCible;
+    private double poids;
 
     /**
      * Constructeur
@@ -11,6 +11,14 @@ public class Arc {
     public Arc(String n, double p){
         this.nCible = n;
         this.poids = p;
+    }
+
+    public String getnCible() {
+        return nCible;
+    }
+
+    public double getPoids() {
+        return poids;
     }
 
     @Override

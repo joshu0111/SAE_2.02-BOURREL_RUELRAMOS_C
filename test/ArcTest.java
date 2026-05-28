@@ -15,8 +15,8 @@ public class ArcTest {
         // Then
         // Note : Comme les attributs sont package-private (visibilité par défaut), 
         // ils sont accessibles directement si le test est dans le même package.
-        assertEquals(noeudCible, arc.nCible, "Le nœud cible doit être correctement initialisé.");
-        assertEquals(poids, arc.poids, "Le poids doit être correctement initialisé.");
+        assertEquals(noeudCible, arc.getnCible(), "Le nœud cible doit être correctement initialisé.");
+        assertEquals(poids, arc.getPoids(), "Le poids doit être correctement initialisé.");
     }
 
     @Test

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Arcs {
     /** Attributs */
-    ArrayList<Arc> listeArcs;
+    private ArrayList<Arc> listeArcs;
 
     /**
      * Constructeur vide

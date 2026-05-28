@@ -62,7 +62,7 @@ public class Valeurs {
 
 
     /**
-     * accede a la valeur associee au noeud nom passe en 
+     * accede a la valeur associee au noeud nom passe en
      * parametre
      *
      * @param nom nom du noeud
