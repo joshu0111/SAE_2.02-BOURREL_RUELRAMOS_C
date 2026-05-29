@@ -73,6 +73,19 @@ public class Valeurs {
     }
 
     /**
+     * Retourne une liste de nœuds correspondant au chemin menant
+     * au nœud passé en paramètre depuis le point de départ
+     *
+     * @param destination
+     * @return
+     */
+    public List<String> calculerChemin(String destination) {
+        while
+    }
+
+
+
+    /**
      * retourne une chaine qui affiche le contenu
      * - par noeud stocke
      * - a chaque noeud, affiche la valeur puis le noeud 
