@@ -30,7 +30,17 @@ public class Djikstra {
             }
             q.remove(u);
             for (Arc arc : g.getNoeudAdjacence(u).getListeArc()) {
-                String v = arc.getDest();
+                String v = arc.getnCible();
+                double poids = arc.getPoids();
+
+                if (q.contains(v)) {
+                    double d = res.getValeur(u) + poids;
+
+                    if (d < res.getValeur(v)) {
+                        res.setValeur(v, d);
+                        res.setParent(v, u);
+                    }
+                }
             }
 
         }
