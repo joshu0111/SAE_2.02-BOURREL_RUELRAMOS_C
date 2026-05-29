@@ -75,12 +75,26 @@ public class Valeurs {
     /**
      * Retourne une liste de nœuds correspondant au chemin menant
      * au nœud passé en paramètre depuis le point de départ
-     *
-     * @param destination
-     * @return
+     * @param destination String qui correspond a noeud que l'on souhaite atteindre
+     * @return List<String>
      */
     public List<String> calculerChemin(String destination) {
-        while
+        // Initialisation du tableau de retour
+        List<String> chemin = new ArrayList<String>();
+
+        // On initialise le noeud courant a la destination
+        String noeudCourant = destination;
+
+
+        // On remonte tout les sommet jusqu'a atteindre le noeud de depart
+        while (noeudCourant != null){
+            // Ajout au chemin
+            chemin.addFirst(noeudCourant);
+
+            // Recupere le prochain noeud
+            noeudCourant = getParent(noeudCourant);
+        }
+        return chemin;
     }
 
 
