@@ -85,7 +85,6 @@ public class Valeurs {
         // On initialise le noeud courant a la destination
         String noeudCourant = destination;
 
-
         // On remonte tout les sommet jusqu'a atteindre le noeud de depart
         while (noeudCourant != null){
             // Ajout au chemin
@@ -104,7 +103,6 @@ public class Valeurs {
      * - par noeud stocke
      * - a chaque noeud, affiche la valeur puis le noeud 
      *   parent
-     *
      * @return descriptif du noeud
      */
     public String toString() {

@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 public class BellmanFordTest {
 
     private BellmanFord bf;
-    private GrapheListe grapheSujet;
+    private GrapheListe graphe;
 
     @BeforeEach
     public void setUp() {
         bf = new BellmanFord();
 
-        // Initialisation du graphe fourni dans la classe Principale
-        grapheSujet = new GrapheListe();
-        grapheSujet.ajouterArc("A", "B", 12);
-        grapheSujet.ajouterArc("A", "D", 87);
-        grapheSujet.ajouterArc("B", "E", 11);
-        grapheSujet.ajouterArc("C", "A", 19);
-        grapheSujet.ajouterArc("D", "B", 23);
-        grapheSujet.ajouterArc("D", "C", 10);
-        grapheSujet.ajouterArc("E", "D", 43);
+        // Initialisation du graphe
+        graphe = new GrapheListe();
+        graphe.ajouterArc("A", "B", 12);
+        graphe.ajouterArc("A", "D", 87);
+        graphe.ajouterArc("B", "E", 11);
+        graphe.ajouterArc("C", "A", 19);
+        graphe.ajouterArc("D", "B", 23);
+        graphe.ajouterArc("D", "C", 10);
+        graphe.ajouterArc("E", "D", 43);
     }
 
     /**
@@ -29,12 +29,11 @@ public class BellmanFordTest {
     @Test
     public void testBellmanFordGrapheSujetDepartA() {
         // Exécution de l'algorithme
-        Valeurs resultats = bf.resoudre(grapheSujet, "A");
+        Valeurs resultats = bf.resoudre(graphe, "A");
 
         assertNotNull(resultats, "Le résultat ne doit pas être null");
 
-        // --- Vérification des distances (Valeurs) ---
-        // A -> A : 0
+        // Vérification des distances (Valeurs)
         assertEquals(0.0, resultats.getValeur("A"), "Distance de A à A doit être 0");
         // A -> B : 12
         assertEquals(12.0, resultats.getValeur("B"), "Distance de A à B doit être 12");
@@ -45,8 +44,8 @@ public class BellmanFordTest {
         // A -> B -> E -> D -> C : 66 + 10 = 76
         assertEquals(76.0, resultats.getValeur("C"), "Distance de A à C doit être 76 (via D)");
 
-        // --- Vérification des parents ---
-        assertNull(resultats.getParent("A"), "Le nœud de départ A ne doit pas avoir de parent");
+        // Vérification des parents
+        assertNull(resultats.getParent("A"), "Le noeud de départ A ne doit pas avoir de parent");
         assertEquals("A", resultats.getParent("B"), "Le parent de B doit être A");
         assertEquals("B", resultats.getParent("E"), "Le parent de E doit être B");
         assertEquals("E", resultats.getParent("D"), "Le parent de D doit être E (et non A)");
@@ -58,7 +57,7 @@ public class BellmanFordTest {
      */
     @Test
     public void testBellmanFordGrapheSujetDepartD() {
-        Valeurs resultats = bf.resoudre(grapheSujet, "D");
+        Valeurs resultats = bf.resoudre(graphe, "D");
 
         // Vérification du chemin le plus court à partir de D
         // D -> C (10), D -> B (23)
@@ -86,7 +85,7 @@ public class BellmanFordTest {
     public void testNoeudIsole() {
         GrapheListe gIsole = new GrapheListe();
         gIsole.ajouterArc("A", "B", 5);
-        // On force l'ajout du nœud "C" sans aucun arc entrant ni sortant 
+        // On force l'ajout du noeud "C" sans aucun arc entrant ni sortant
         // (ajouterArc sur lui-même ou simplement présent dans la liste)
         gIsole.ajouterArc("C", "C", 0);
 
@@ -98,7 +97,7 @@ public class BellmanFordTest {
         assertEquals("A", resultats.getParent("B"));
 
         // C est inaccessible depuis A
-        assertEquals(Double.MAX_VALUE, resultats.getValeur("C"), "Un nœud inaccessible doit rester à MAX_VALUE");
-        assertNull(resultats.getParent("C"), "Un nœud inaccessible ne doit pas avoir de parent");
+        assertEquals(Double.MAX_VALUE, resultats.getValeur("C"), "Un noeud inaccessible doit rester à MAX_VALUE");
+        assertNull(resultats.getParent("C"), "Un noeud inaccessible ne doit pas avoir de parent");
     }
 }
