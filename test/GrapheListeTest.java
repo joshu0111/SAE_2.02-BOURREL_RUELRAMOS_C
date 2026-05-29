@@ -42,11 +42,11 @@ public class GrapheListeTest {
         assertNotNull(arcsA);
         assertEquals(2, arcsA.getListeArc().size());
 
-        assertEquals("B", arcsA.getListeArc().get(0).nCible);
-        assertEquals(12, arcsA.getListeArc().get(0).poids);
+        assertEquals("B", arcsA.getListeArc().get(0).getnCible());
+        assertEquals(12, arcsA.getListeArc().get(0).getPoids());
 
-        assertEquals("D", arcsA.getListeArc().get(1).nCible);
-        assertEquals(87, arcsA.getListeArc().get(1).poids);
+        assertEquals("D", arcsA.getListeArc().get(1).getnCible());
+        assertEquals(87, arcsA.getListeArc().get(1).getPoids());
     }
 
     @Test
@@ -58,8 +58,8 @@ public class GrapheListeTest {
         assertNotNull(arcsB);
         assertEquals(1, arcsB.getListeArc().size());
 
-        assertEquals("E", arcsB.getListeArc().get(0).nCible);
-        assertEquals(11, arcsB.getListeArc().get(0).poids);
+        assertEquals("E", arcsB.getListeArc().get(0).getnCible());
+        assertEquals(11, arcsB.getListeArc().get(0).getPoids());
     }
 
     @Test
@@ -71,8 +71,8 @@ public class GrapheListeTest {
         assertNotNull(arcsC);
         assertEquals(1, arcsC.getListeArc().size());
 
-        assertEquals("A", arcsC.getListeArc().get(0).nCible);
-        assertEquals(19, arcsC.getListeArc().get(0).poids);
+        assertEquals("A", arcsC.getListeArc().get(0).getnCible());
+        assertEquals(19, arcsC.getListeArc().get(0).getPoids());
     }
 
     @Test
@@ -84,11 +84,11 @@ public class GrapheListeTest {
         assertNotNull(arcsD);
         assertEquals(2, arcsD.getListeArc().size());
 
-        assertEquals("B", arcsD.getListeArc().get(0).nCible);
-        assertEquals(23, arcsD.getListeArc().get(0).poids);
+        assertEquals("B", arcsD.getListeArc().get(0).getnCible());
+        assertEquals(23, arcsD.getListeArc().get(0).getPoids());
 
-        assertEquals("C", arcsD.getListeArc().get(1).nCible);
-        assertEquals(10, arcsD.getListeArc().get(1).poids);
+        assertEquals("C", arcsD.getListeArc().get(1).getnCible());
+        assertEquals(10, arcsD.getListeArc().get(1).getPoids());
     }
 
     @Test
@@ -100,8 +100,8 @@ public class GrapheListeTest {
         assertNotNull(arcsE);
         assertEquals(1, arcsE.getListeArc().size());
 
-        assertEquals("D", arcsE.getListeArc().get(0).nCible);
-        assertEquals(43, arcsE.getListeArc().get(0).poids);
+        assertEquals("D", arcsE.getListeArc().get(0).getnCible());
+        assertEquals(43, arcsE.getListeArc().get(0).getPoids());
     }
 
     @Test

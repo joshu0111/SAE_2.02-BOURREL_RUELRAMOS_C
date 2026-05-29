@@ -1,7 +1,7 @@
 public class Arc {
     /** Attributrs */
-    String nCible;
-    double poids;
+    private String nCible;
+    private double poids;
 
     /**
      * Constructeur
