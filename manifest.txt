@@ -1,1 +1,3 @@
 Main-Class: MainBellmanFord
+Main-Class: Djikstra
+Main-Class: Principale

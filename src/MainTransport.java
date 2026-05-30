@@ -17,11 +17,11 @@ public class MainTransport {
         List<String> cheminBellmanFord = valeursBellmanFord.calculerChemin(destination);
         System.out.println(cheminBellmanFord);
 
-//        // Calcul Djikstra
-//        Djikstra djikstra = new Djikstra();
-//        Valeurs valeursDjikstra = djikstra.resoudre(graphe, depart);
-//        List<String> cheminDjikstra = valeursDjikstra.calculerChemin(destination);
-//        System.out.println(cheminDjikstra);
+        // Calcul Djikstra
+        Djikstra djikstra = new Djikstra();
+        Valeurs valeursDjikstra = djikstra.resoudre(graphe, depart);
+        List<String> cheminDjikstra = valeursDjikstra.calculerChemin(destination);
+        System.out.println(cheminDjikstra);
 
 
     }
