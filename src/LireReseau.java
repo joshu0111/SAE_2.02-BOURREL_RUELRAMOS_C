@@ -26,8 +26,4 @@ public class LireReseau {
         }
         return g;
     }
-
-    public static void main(String[] args) throws IOException {
-        System.out.println(lire("infos_reseau/stan.nodes.txt", "infos_reseau/stan.edges.txt"));
-    }
 }
