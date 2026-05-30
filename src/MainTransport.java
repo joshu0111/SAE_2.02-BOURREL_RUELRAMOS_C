@@ -40,13 +40,27 @@ public class MainTransport {
 
 //        System.out.println(cheminDjikstra + "\nCalculé en " + (endTime-startTime) + " ns avec l'algorithme de Djikstra.");
 
-            // On transforme la liste [arret1, arret2] en une chaîne "arret1;arret2"
-            String formatPython = String.join(";", cheminDjikstra);
+            // On construit la chaîne propre sans espaces parasites
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < cheminDjikstra.size(); i++) {
+                sb.append(cheminDjikstra.get(i).trim());
+                if (i < cheminDjikstra.size() - 1) {
+                    sb.append(";");
+                }
+            }
 
-            // On affiche UNIQUEMENT cette chaîne pour que Python la lise
-            System.out.print(formatPython);
+            String formatPython = sb.toString().trim();
 
+            //  On écrit la chaîne suivie d'un saut de ligne
+            // pour vider le buffer du système d'exploitation vers Python
+            System.out.println(formatPython);
+
+            // On force l'envoi immédiat
             System.out.flush();
+
+            // On ferme explicitement la sortie standard.
+            // C'est ça qui va déclencher le "if not new: break" en Python !
+            System.out.close();
 
         }catch (Exception e){
             e.printStackTrace();
