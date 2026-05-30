@@ -5,6 +5,7 @@ out/
 .ai/
 .junie/
 .idea/
+venv_python/
 <<<<<<< HEAD
 =======
 # Editor-based HTTP Client requests
