@@ -7,13 +7,13 @@ public class MainTransport {
             System.out.println("Utilisation du programme : \n     java -jar ApplicationCalculTajetTransport.jar [id_arret_depart] [id_arret_destination]");
             return;
         }
-        String depart = args[0];
-        String destination = args[1];
+        String depart = args[0].split("\\[")[1].split("]")[0];
+        String destination = args[1].split("\\[")[1].split("]")[0];
 
         // Creation du graphe
         Graphe graphe = LireReseau.lire(
-                "infos_reseau/stan.nodes.txt",
-                "infos_reseau/stan.edges.txt");
+                "/Users/joshua/Desktop/COURS/S2/SAE/SAE_2.02-BOURREL_RUELRAMOS_C/infos_reseau/stan.nodes.txt",
+                "/Users/joshua/Desktop/COURS/S2/SAE/SAE_2.02-BOURREL_RUELRAMOS_C/infos_reseau/stan.edges.txt");
 
 
         // Calcul BellmanFord
@@ -37,6 +37,6 @@ public class MainTransport {
 
         List<String> cheminDjikstra = valeursDjikstra.calculerChemin(destination);
 
-        System.out.println(cheminBellmanFord + "\nCalculé en " + (endTime-startTime) + " ns avec l'algorithme de Djikstra.");
+        System.out.println(cheminDjikstra + "\nCalculé en " + (endTime-startTime) + " ns avec l'algorithme de Djikstra.");
     }
 }
