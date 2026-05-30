@@ -1,7 +1,10 @@
 # Default ignored files
 out/
 /shelf/
-/workspace.xml
+/.idea/workspace.xml
+.ai/
+.junie/
+.idea/
 <<<<<<< HEAD
 =======
 # Editor-based HTTP Client requests
