@@ -12,8 +12,8 @@ public class MainTransport {
 
         // Creation du graphe
         Graphe graphe = LireReseau.lire(
-                "/Users/joshua/Desktop/COURS/S2/SAE/SAE_2.02-BOURREL_RUELRAMOS_C/infos_reseau/stan.nodes.txt",
-                "/Users/joshua/Desktop/COURS/S2/SAE/SAE_2.02-BOURREL_RUELRAMOS_C/infos_reseau/stan.edges.txt");
+                "infos_reseau/stan.nodes.txt",
+                "infos_reseau/stan.edges.txt");
 
 
         // Calcul BellmanFord
@@ -38,5 +38,6 @@ public class MainTransport {
         List<String> cheminDjikstra = valeursDjikstra.calculerChemin(destination);
 
         System.out.println(cheminDjikstra + "\nCalculé en " + (endTime-startTime) + " ns avec l'algorithme de Djikstra.");
+        return;
     }
 }
