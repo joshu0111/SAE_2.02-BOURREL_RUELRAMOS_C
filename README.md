@@ -29,7 +29,10 @@ java -cp Projet.jar Principale
 java -jar nomDuProjet.jar
 ```
 
-
+## Executer le fichier python
+```bash
+python3 gui/main-gui.py --gtfs gui/STAN.GTFS --jar PATH/TO/JAR
+```
 
 
 <span style="color:#00FF00">JOSHUA RUELRAMOS</span><br>
