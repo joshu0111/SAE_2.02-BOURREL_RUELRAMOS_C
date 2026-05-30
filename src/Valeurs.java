@@ -88,7 +88,7 @@ public class Valeurs {
         // On remonte tout les sommet jusqu'a atteindre le noeud de depart
         while (noeudCourant != null){
             // Ajout au chemin
-            chemin.addFirst(noeudCourant);
+            chemin.add(0,noeudCourant);
 
             // Recupere le prochain noeud
             noeudCourant = getParent(noeudCourant);

@@ -6,6 +6,7 @@ out/
 .junie/
 .idea/
 venv_python/
+target/
 <<<<<<< HEAD
 =======
 # Editor-based HTTP Client requests

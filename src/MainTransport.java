@@ -11,18 +11,28 @@ public class MainTransport {
                 "infos_reseau/stan.nodes.txt",
                 "infos_reseau/stan.edges.txt");
 
+
         // Calcul BellmanFord
         BellmanFord bellmanFord = new BellmanFord();
+
+        long startTime = System.nanoTime();
         Valeurs valeursBellmanFord = bellmanFord.resoudre(graphe, depart);
+        long endTime = System.nanoTime();
+
         List<String> cheminBellmanFord = valeursBellmanFord.calculerChemin(destination);
-        System.out.println(cheminBellmanFord);
+
+        System.out.println(cheminBellmanFord + "\nCalculé en " + (endTime-startTime) + " ns avec l'algorithme de Bellaman Ford.");
+
 
         // Calcul Djikstra
         Djikstra djikstra = new Djikstra();
+
+        startTime = System.nanoTime();
         Valeurs valeursDjikstra = djikstra.resoudre(graphe, depart);
+        endTime = System.nanoTime();
+
         List<String> cheminDjikstra = valeursDjikstra.calculerChemin(destination);
-        System.out.println(cheminDjikstra);
 
-
+        System.out.println(cheminBellmanFord + "\nCalculé en " + (endTime-startTime) + " ns avec l'algorithme de Djikstra.");
     }
 }
