@@ -3,6 +3,10 @@ import java.util.List;
 
 public class MainTransport {
     public static void main(String[] args) throws IOException {
+        if (args.length < 2){
+            System.out.println("Utilisation du programme : \n     java -jar ApplicationCalculTajetTransport.jar [id_arret_depart] [id_arret_destination]");
+            return;
+        }
         String depart = args[0];
         String destination = args[1];
 
