@@ -17,15 +17,15 @@ public class Djikstra {
         while(!q.isEmpty()){
             String u = null;
             double minValeur = Double.MAX_VALUE;
-            for (int i = 0; i < noeuds.size(); i++) {
-                double val = res.getValeur(noeuds.get(i));
-                // Cherche de la plus petite valeur
+            for (int i = 0; i < q.size(); i++) {
+                double val = res.getValeur(q.get(i));
+                // cherche la plus petite valeur
                 if (val < minValeur) {
                     minValeur = val;
-                    u = noeuds.get(i);
+                    u = q.get(i);
                 }
             }
-            if (u == null || minValeur == Double.POSITIVE_INFINITY) {
+            if (u == null || minValeur == Double.MAX_VALUE) {
                 break;
             }
             q.remove(u);
