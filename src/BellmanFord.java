@@ -6,10 +6,12 @@ public class BellmanFord {
     /** Attributs */
 
     /**
-     * TO DO
-     *
-     *
-     * */
+     * Résout le problème du plus court chemin unique depuis un noeud de départ dans un graphe donné
+     * en utilisant l'algorithme de Bellman-Ford.
+     * @param g Un objet Graphe sur lequel appliquer l'algorithme.
+     * @param depart L'identifiant du nœud source (point de départ).
+     * @return Un objet Valeurs contenant les distances minimales calculées et les noueds parents.
+     */
     public Valeurs resoudre(Graphe g, String depart){
         Valeurs valeurs = new Valeurs();
 

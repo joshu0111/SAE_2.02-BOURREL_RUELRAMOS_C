@@ -60,7 +60,6 @@ public class Valeurs {
         return this.parent.get(nom);
     }
 
-
     /**
      * accede a la valeur associee au noeud nom passe en
      * parametre
@@ -95,8 +94,6 @@ public class Valeurs {
         }
         return chemin;
     }
-
-
 
     /**
      * retourne une chaine qui affiche le contenu

@@ -4,16 +4,27 @@ public class GrapheListe implements Graphe{
     ArrayList<String> noeuds;
     ArrayList<Arcs> adjacences;
 
+    /**
+     * Constructeur vide. Initialise les listes de nœuds et d'adjacences à vide.
+     */
     public GrapheListe(){
         this.noeuds = new ArrayList<String>();
         this.adjacences = new ArrayList<Arcs>();
     }
 
+    /**
+     * Retourne la liste de tous les noeuds enregistrés dans le graphe.
+     */
     @Override
     public ArrayList<String> getListeNoeuds(){
         return this.noeuds;
     }
 
+    /**
+     * Retourne l'objet Arcs contenant les voisins du noeud spécifié.
+     * @param noeud L'identifiant du noeud source.
+     * @return L'objet Arcs lié, ou null si le noeud n'existe pas dans le graphe.
+     */
     @Override
     public Arcs getNoeudAdjacence(String noeud){
         int indiceNoeud = this.noeuds.indexOf(noeud);
@@ -47,6 +58,11 @@ public class GrapheListe implements Graphe{
         this.adjacences.get(indiceSrc).ajouterArc(a);
     }
 
+    /**
+     * Génère une représentation textuelle complète du graphe par listes d'adjacence.
+     * Chaque ligne affiche : "NoeudSrc -> NoeudDest1(poids) NoeudDest2(poids)...".
+     * @return Une chaîne de caractères décrivant la topologie du graphe.
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

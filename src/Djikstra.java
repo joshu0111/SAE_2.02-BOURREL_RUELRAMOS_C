@@ -1,6 +1,14 @@
 import java.util.ArrayList;
 
 public class Djikstra {
+    /**
+     * Résout le problème du plus court chemin depuis un noeud de départ vers tous les autres sommets du graphe
+     * en utilisant l'algorithme de Dijkstra.
+     *
+     * @param g Un objet Graphe à analyser.
+     * @param depart L'identifiant du noeud source.
+     * @return Un objet Valeurs contenant le coût minimal pour chaque noeud ainsi que leur antécédent (parent).
+     */
     public Valeurs resoudre(Graphe g, String depart){
         Valeurs res = new  Valeurs();
         // noeuds represente l'ensemble des noeuds du graphe
