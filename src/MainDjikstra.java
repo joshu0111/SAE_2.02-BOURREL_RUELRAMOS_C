@@ -1,8 +1,12 @@
-public class MainBellmanFord {
-    public static void main(String[] args){
-        BellmanFord bellmanFord = new BellmanFord();
+import java.util.List;
 
-        // Creation du graphe
+public class MainDjikstra {
+
+    public static void main(String[] args) {
+        // Création de l'algorithme
+        Djikstra djikstra = new Djikstra();
+
+        // Création du graphe
         GrapheListe graphe = new GrapheListe();
         graphe.ajouterArc("A", "B", 12);
         graphe.ajouterArc("A", "D", 87);
@@ -12,9 +16,9 @@ public class MainBellmanFord {
         graphe.ajouterArc("D", "C", 10);
         graphe.ajouterArc("E", "D", 43);
 
-        Valeurs res = bellmanFord.resoudre(graphe, "A");
+        Valeurs res = djikstra.resoudre(graphe, "A");
         System.out.println(res.calculerChemin("C"));
-        System.out.println("Distance totale : " + res.getValeur("C"));
 
+        System.out.println("Distance totale : " + res.getValeur("C"));
     }
 }
